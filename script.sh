@@ -1,10 +1,10 @@
 #!/bin/bash
 
-TARGET_DIR=$1
-OUTPUT_FILE="forensic_timeline.txt"
+TARGET_DIR=$1 #First argument to be passed to the script, which is the target directory
+OUTPUT_FILE="forensic_timeline.txt" #Define filenames 
 CARVE_DIR="./carved_files"
-# AI_API_KEY="your_key_here"
 
+#Check if user provided a directory path
 if [[ -z "$TARGET_DIR" ]]; then
     echo "Usage: $0 <directory>"
     exit 1
@@ -12,6 +12,7 @@ fi
 
 echo "Starting Forensic Analysis on: $TARGET_DIR"
 
+#
 generate_timeline() {
     echo "[+] Extracting metadata and generating timeline..."
     # Using 'find' to grab files and 'stat' to format the output
