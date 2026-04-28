@@ -1,32 +1,32 @@
 #!/bin/bash
 
-TARGET_DIR=$1
-OUTPUT_DIR="forensic_report_$(date +%Y%m%d_%H%M%S)"
-API_KEY="PUT_KEY_HERE"
+TARGET_DIR=$1 # Defined the target directory from the first argument 
+OUTPUT_DIR="forensic_report_$(date +%Y%m%d_%H%M%S)" # Created a timestamped directory for forensic arifacts to prevent overwriting 
+API_KEY="PUT_KEY_HERE" # API key for analysis 
 
-if [ -z "$TARGET_DIR" ] || [ ! -d "$TARGET_DIR" ]; then
+if [ -z "$TARGET_DIR" ] || [ ! -d "$TARGET_DIR" ]; then # Ensured the user provided a directory and verify that it exists 
     echo "Usage: ./triage_pro.sh <target_directory>"
     exit 1
 fi
 
-mkdir -p "$OUTPUT_DIR/carved_files"
+mkdir -p "$OUTPUT_DIR/carved_files" # Intialized output structure for data storage 
 TIMELINE="$OUTPUT_DIR/timeline.csv"
 
 echo "[+] Starting Triage on: $TARGET_DIR"
 
 echo "[+] Extracting metadata and building timeline..."
 
-echo "Filename|Size(Bytes)|Permissions|Owner|Last_Modified" > "$TIMELINE"
+echo "Filename|Size(Bytes)|Permissions|Owner|Last_Modified" > "$TIMELINE" # Created a CSV header for data analysis 
 
-find "$TARGET_DIR" -type f -exec stat --printf="%n|%s|%A|%U|%y\n" {} + >> "$TIMELINE"
+find "$TARGET_DIR" -type f -exec stat --printf="%n|%s|%A|%U|%y\n" {} + >> "$TIMELINE" #Scans files repeatedly and extract MAC times and permissions 
 
-sort -t'|' -k5 "$TIMELINE" -o "$TIMELINE"
+sort -t'|' -k5 "$TIMELINE" -o "$TIMELINE" #Will sort the timeline from oldest to newest
 
 echo "[+] Timeline saved to: $TIMELINE"
 
 echo "[+] Running 'foremost' to carve deleted/hidden files..."
 
-if command -v foremost &>/dev/null; then
+if command -v foremost &>/dev/null; then #Run quiet mode to extract files based on headers and footers 
     foremost -i "$TARGET_DIR" -o "$OUTPUT_DIR/carved_files" -q 2>/dev/null
     echo "[+] Carving complete. See: $OUTPUT_DIR/carved_files"
 else
