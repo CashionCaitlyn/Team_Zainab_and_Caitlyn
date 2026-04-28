@@ -11,6 +11,6 @@ This will be executed by creating a bash script that accepts the directory as it
 
 AI Use: AI will read through the file system data that was scanned, and output results in laymans terms. This will be used by using an API key.
 
-#Project Overview
+# Project Overview
 FileScan is a bash and Python toolkit for digital forensics designed to analyze suspicious directories on a Linux system. The tool is able to automate the process of combing through file attributes
 
