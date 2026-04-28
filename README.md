@@ -53,4 +53,5 @@ FileScan is a bash and Python toolkit for digital forensics designed to analyze 
    - timeline.csv: Every file found that will be put in chronological order by date oldest to newest
    - carved_files/: Any deleted or hidden files that were able to be recovered 
 ### Reading the Final Report
-- cat forensic_report_*/SUMMARY_REPORT.txt
+- To read the final report, run this command:
+   - cat forensic_report_*/SUMMARY_REPORT.txt
