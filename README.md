@@ -1,4 +1,4 @@
-# IT_360_Final_Project_Spring
+# FILESCAN: File System Forensics and AI Interpreter 
 
 ## Team Members
 - Caitlyn Cashion
@@ -10,3 +10,7 @@ Collect file system data by scanning a specific directory, and extract attribute
 This will be executed by creating a bash script that accepts the directory as its input, files in that directory will be scanned, metadata file will be extracted and then the timeline will be created based off the data being formatted. This timeline will then be outputted as a text file. 
 
 AI Use: AI will read through the file system data that was scanned, and output results in laymans terms. This will be used by using an API key.
+
+#Project Overview
+FileScan is a bash and Python toolkit for digital forensics designed to analyze suspicious directories on a Linux system. The tool is able to automate the process of combing through file attributes
+
