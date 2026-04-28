@@ -57,11 +57,11 @@ This is what should be outputted once the script is ran:
    - SUMMARY_REPORT.txt: AI summary
    - timeline.csv: Every file found that will be put in chronological order by date oldest to newest
    - carved_files/: Any deleted or hidden files that were able to be recovered 
-### Reading the Final Report
+###Reading the Final Report
 - To read the final report, run this command:
    - cat forensic_report_*/SUMMARY_REPORT.txt
 
-### Troubleshooting
+## Troubleshooting
 Getting a "Permisssion denied" output when running the script
 - Make sure to run chmod +x src/file_examiner.sh
 
