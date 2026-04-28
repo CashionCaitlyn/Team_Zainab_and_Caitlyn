@@ -29,5 +29,28 @@ FileScan is a bash and Python toolkit for digital forensics designed to analyze 
 ## How to use FileScan
 - Make sure you are on a Linux system (Preferbly Kali Linux)
 ### Tools Required
-
-
+- curl: sudo apt install curl
+- python3: sudo apt install python3
+- foremost: sudo apt install foremost
+### Setup
+- Step 1:  If you have git installed, run the command git clone https://github/CashionCaitlyn/file_examiner.git, then run file_examiner. You can also download it manually by going to Github, clicking the code button and download the ZIP file
+- Step 2: Give the script permission to run. Go to the folder where the script is and run chmod +x src/file_examiner.sh
+### Running The Script
+- /src/file_examiner.sh /path/to/folder (replace with the actual folder you want to scan)
+- This is what should be outputted once the script is ran:
+[+] Starting Triage on: /home/kali/Documents
+[+] Extracting metadata and building timeline...
+[+] Timeline saved to: forensic_report_20250424_143022/timeline.csv
+[+] Running foremost to carve deleted/hidden files...
+[+] Carving complete.
+[+] Sending data to AI for expert interpretation...
+----------------------------------------------------
+[!] ANALYSIS COMPLETE
+[!] View the final summary at: forensic_report_20250424_143022/SUMMARY_REPORT.txt
+- When the analysis is complete, a new folder will appear in the same directory. It will be called something like "forensic_report_20250424_143022"
+- Inside this report, you will see these files:
+   - SUMMARY_REPORT.txt: AI summary
+   - timeline.csv: Every file found that will be put in chronological order by date oldest to newest
+   - carved_files/: Any deleted or hidden files that were able to be recovered 
+### Reading the Final Report
+- cat forensic_report_*/SUMMARY_REPORT.txt
