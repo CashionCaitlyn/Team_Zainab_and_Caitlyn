@@ -28,15 +28,19 @@ FileScan is a bash and Python toolkit for digital forensics designed to analyze 
 
 ## How to use FileScan
 - Make sure you are on a Linux system (Preferbly Kali Linux)
+
 ### Tools Required
 - curl: sudo apt install curl
 - python3: sudo apt install python3
 - foremost: sudo apt install foremost
+
 ### Setup
 - Step 1:  If you have git installed, run the command git clone https://github/CashionCaitlyn/file_examiner.git, then run file_examiner. You can also download it manually by going to Github, clicking the code button and download the ZIP file
 - Step 2: Give the script permission to run. Go to the folder where the script is and run chmod +x src/file_examiner.sh
+
 ### Running The Script
 - /src/file_examiner.sh /path/to/folder (replace with the actual folder you want to scan)
+
 ### What The Output Will Look Like
 This is what should be outputted once the script is ran:
 - [+] Starting Triage on: /home/kali/Documents
@@ -47,6 +51,7 @@ This is what should be outputted once the script is ran:
 - [+] Sending data to AI for expert interpretation...
 - [!] ANALYSIS COMPLETE
 - [!] View the final summary at: forensic_report_20250424_143022/SUMMARY_REPORT.txt
+
 - When the analysis is complete, a new folder will appear in the same directory. It will be called something like "forensic_report_20250424_143022"
 - Inside this report, you will see these files:
    - SUMMARY_REPORT.txt: AI summary
@@ -55,3 +60,18 @@ This is what should be outputted once the script is ran:
 ### Reading the Final Report
 - To read the final report, run this command:
    - cat forensic_report_*/SUMMARY_REPORT.txt
+
+### Troubleshooting
+Getting a "Permisssion denied" output when running the script
+- Make sure to run chmod +x src/file_examiner.sh
+
+Getting "Foremost not found" output
+- Run sudo apt install foremost
+
+AI Error: Could not parse reponse
+- This will show up when all the results are outputted. This could be because the API key used in the script may have expired
+
+Curl: command not found
+- Run sudo apt install curl
+## Video Demonstration 
+
