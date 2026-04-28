@@ -24,5 +24,10 @@ FileScan is a bash and Python toolkit for digital forensics designed to analyze 
 - Chronological Timeline: All files will be sorted oldest to newest, based on the date and time it was modified
 - File Carving: Recovers deleted file fragments
 - AI Summary: Claude API reads the scan data and will output a summary in a friendly-view report
-- Organization: Every time a scan is executed, it will be saved to a timestamp folder. The script also ensures no past run will be overwritten 
+- Organization: Every time a scan is executed, it will be saved to a timestamp folder. The script also ensures no past run will be overwritten
+
+## How to use FileScan
+- Make sure you are on a Linux system (Preferbly Kali Linux)
+### Tools Required
+
 
