@@ -35,7 +35,7 @@ FileScan is a bash and Python toolkit for digital forensics designed to analyze 
 - foremost: sudo apt install foremost
 
 ### Setup
-- Step 1:  If you have git installed, run the command git clone https://github/CashionCaitlyn/file_examiner.git, then run file_examiner. You can also download it manually by going to Github, clicking the code button and download the ZIP file
+- Step 1:  If you have git installed, run the command git clone https://github.com/CashionCaitlyn/Team_Zainab_and_Caitlyn.git, run the command cd Team_Zainab_and_Caitlyn then run file_examiner by using the command ./src/file_examiner ~/fake_directory. You can also download it manually by going to Github, clicking the code button and download the ZIP file
 - Step 2: Give the script permission to run. Go to the folder where the script is and run chmod +x src/file_examiner.sh
 
 ### Running The Script
