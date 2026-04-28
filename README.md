@@ -37,6 +37,7 @@ FileScan is a bash and Python toolkit for digital forensics designed to analyze 
 - Step 2: Give the script permission to run. Go to the folder where the script is and run chmod +x src/file_examiner.sh
 ### Running The Script
 - /src/file_examiner.sh /path/to/folder (replace with the actual folder you want to scan)
+### What The Output Will Look Like
 - This is what should be outputted once the script is ran:
 [+] Starting Triage on: /home/kali/Documents
 [+] Extracting metadata and building timeline...
@@ -44,7 +45,6 @@ FileScan is a bash and Python toolkit for digital forensics designed to analyze 
 [+] Running foremost to carve deleted/hidden files...
 [+] Carving complete.
 [+] Sending data to AI for expert interpretation...
-----------------------------------------------------
 [!] ANALYSIS COMPLETE
 [!] View the final summary at: forensic_report_20250424_143022/SUMMARY_REPORT.txt
 - When the analysis is complete, a new folder will appear in the same directory. It will be called something like "forensic_report_20250424_143022"
