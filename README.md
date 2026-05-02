@@ -74,4 +74,4 @@ AI Error: Could not parse reponse
 Curl: command not found
 - Run sudo apt install curl
 ## Video Demonstration 
-
+https://www.youtube.com/watch?v=4-u0uugx8cg 
